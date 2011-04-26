@@ -413,17 +413,17 @@
             addon = (orientation ? -1 : 1) * (dashsize + 9 + !orientation);
             var X = x,
                 dx = length / steps,
-                txt = 0,
-                prev = 0;
+                txt = 0;
+                // prev = 0;
             while (X <= x + length) {
                 type != "-" && type != " " && (path = path.concat(["M", X + .5, y - (type == "+" ? dashsize : !!orientation * dashsize * 2), "l", 0, dashsize * 2 + 1]));
                 text.push(txt = this.text(X, y + addon, (labels && labels[j++]) || (Math.round(label) == label ? label : +label.toFixed(rnd))).attr(this.g.txtattr));
-                var bb = txt.getBBox();
-                if (prev >= bb.x - 5) {
-                    text.pop(text.length - 1).remove();
-                } else {
-                    prev = bb.x + bb.width;
-                }
+                // var bb = txt.getBBox();
+                // if (prev >= bb.x - 5) {
+                //     text.pop(text.length - 1).remove();
+                // } else {
+                //     prev = bb.x + bb.width;
+                // }
                 label += d;
                 X += dx;
             }
